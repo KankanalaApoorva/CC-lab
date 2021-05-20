@@ -1,0 +1,124 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+float area(int a,int b, int c);
+void main()
+{
+int s1,s2,s3;
+float area_of_triangle;
+clrscr();
+printf("Enter the sides of the triangle\n");
+scanf("%d%d%d",&s1,&s2,&s3);
+area_of_triangle=area(s1,s2,s3);
+printf("Area of the triangle is%f",area_of_triangle);
+getch();
+}
+float area(int a,int b,int c)
+{
+float s,res;
+s=(a+b+c)/2;
+res=sqrt(s*(s-a)*(s-b)*(s-c));
+return(res);
+}
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int a,b,c,d;
+float root1,root2;
+clrscr();
+printf("Enter the coeffecients\n");
+scanf("%d%d%d",&a,&b,&c);
+d=b*b-(4*a*c);
+if(d>0)
+{
+root1=(-d+sqrt(d))/2*a;
+root2=(-b-sqrt(d))/2*a;
+printf("The roots are real and distinct %fand %f",root1,root2);
+}
+else if(d=0)
+{
+root1=-b/(2*a);
+printf("The roots are real and equaland %f,%f",root1,root1);
+}
+else
+{
+printf("the roots are imaginary");
+}
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+float average(int a,int b,int c);
+void main()
+{
+int num1,num2,num3;
+float av;
+clrscr();
+printf("Enter three numbers\n");
+scanf("%d%d%d",&num1,&num2,&num3);
+printf("The average is %f",av);
+getch();
+}
+float average(int a,int b,int c)
+{
+float res;
+res=(a+b+c)/3;
+return(res);
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,c;
+printf("Enter the three numbers\n");
+scanf("%d%d%d",&a,&b,&c);
+if(a<b&&a<c)
+{
+printf("%d is smallest",a);
+}
+else if(b<c&&b<a)
+{
+printf("%d is smallest",b);
+}
+else if(c<a&&c<b)
+{
+print("%d is smallest",c);
+}
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
