@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+void main()    
+{    
+int n,sum=0,dig;
+clrscr();    
+printf("Enter a number:\n");    
+scanf("%d",&n);    
+while(n>0)    
+{    
+dig=n%10;    
+sum=sum+dig;    
+n=n/10;    
+}    
+printf("Sum=%d",sum);
+getch();      
+}  
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i = 0,n;
+clrscr();
+printf("Enter the number\n");
+scanf("%d",&n);
+for (i=1;i<=100;i++)
+{
+if (i%n==0)
+printf("%d\n",i);
+}
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int s,e,i;
+clrscr();
+printf("Enter the starting and ending numbers respectively\n");
+scanf("%d%d",&s,&e);
+for(i=s;i<=e;i++)
+{
+if(i%2==0)
+{
+printf("%d ",i);
+}
+}
+getch();
+}
