@@ -1,0 +1,116 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i,j,row,col,mat[3][3],tra_mat[3][3];
+clrscr();
+printf("Enter the no of rows\n");
+scanf("%d",&row);
+printf("Enter the no of columns\n");
+scanf("%d",&col);
+printf("Enter the elements\n");
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+scanf("%d",&mat[i][j]);
+}
+printf("The matrix now is\n");
+for(i=0;i<row;i++)
+{
+printf("\n");
+for(j=0;j<col;j++)
+printf("%d ",mat[i][j];
+}
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+tra_mat[i][j]=mat[j][i];
+}
+printf("\nThe transposed matrix is\n");
+for(i=0;i<row;i++)
+{
+printf("\n");
+for(j=0;j<col;j++)
+printf("%d ",tra_mat[i][j]);
+}
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i,j,row1,row2,col1,col2,row_sum=0,col_sum=0,mat1[3][3],mat2[3][3],sum[3][3];
+clrscr();
+printf("Enter rows and columns of first matrix\n");
+scanf("%d%d",&row1,&col1);
+printf("\nEnter the rows and columns of second matrix\n");
+scanf("%d%d",&row2,&col2);
+if(row1!=row2||col1!=col2)
+{
+printf("The sum cannot be computed\n");
+getch();
+exit();
+}
+printf("Enter the first matrix elements\n");
+for(i=0;i<row1;i++)
+{
+for(j=0;j<col1;j++)
+scanf("%d",&mat1[i][j]);
+}
+printf("\nEnter the second matrix elements\n");
+for(i=0;i<row2;i++)
+{
+for(j=0;j<col2;j++)
+scanf("%d",&mat2[i][j]);
+}
+row_sum=row1;
+col_sum=col1;
+for(i=0;i<row_sum;i++)
+{
+for(j=0;j<col_sum;j++)
+sum[i][j]=mat1[i][j]+mat2[i][j];
+}
+printf("\nThe sum matrix is\n");
+for(i=0;i<row_sum;i++)
+{
+printf("\n");
+for(j=0;j<col_sum;j++)
+print("%d ",sum[i][j]);
+}
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i,j,marks[4][3];max_marks=0;
+clrscr();
+for(i=0;i<4;i++)
+{
+printf("The marks obtained by %d student is\n",i);
+for(j=0;j<3;j++)
+scanf("%d",&marks[i][j]);
+}
+printf("The array entered is\n");
+for(i=0;i<4;i++)
+{
+printf("\n");
+for(j=0;j<3;j++)
+printf("%d ",marks[i][j]);
+}
+for(j=0;j<3;j++)
+{
+max_marks=marks[0][j];
+for(i=0;i<4;i++)
+{
+if(marks[i][j]>max_marks)
+max_marks=marks[i][j];
+}
+printf("\nThe maximum marks obtained in subject %d =%d",j,max_marks);
+}
+getch();
+}
