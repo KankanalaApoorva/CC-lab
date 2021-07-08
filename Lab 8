@@ -1,0 +1,169 @@
+#include<stdio.h>
+void main()
+{
+struct student
+{
+char roll_numb[100];
+char name[100],sec[30],dept[50];
+int result,fee;
+}
+stud1,stud2;
+clrscr();
+printf("\nEnter the details of student 1:");
+printf("\nname:");
+getchar();
+gets(stud1.name);
+printf("\nsection:");
+scanf("%s",stud1.sec);
+printf("\nroll number:");
+scanf("%s",&stud1.roll_numb);
+printf("\ndepartment:");
+scanf("%s",&stud1.dept);
+printf("\nfee:");
+scanf("%d",&stud1.fee);
+printf("\nresult:");
+scanf("%d",&stud1.result);
+printf("\nEnter the details of student 2:");
+printf("\nname:");
+getchar();
+gets(stud2.name);
+printf("\nsection:");
+scanf("%s",stud2.sec);
+printf("\nroll number:");
+scanf("%s",&stud2.roll_numb);
+printf("\ndepartment:");
+scanf("%s",&stud2.dept);
+printf("\nfee:");
+scanf("%d",&stud2.fee);
+printf("\nresult:");
+scanf("%d",&stud2.result);
+if(stud1.result>=stud2.result)
+{
+printf("student 1 got the hightest marks \n the details of the student is as follows:\nname:%s\nsection:%s\nrollnumber:%s\ndepartment:%s\nfees:%d\nresult:%d",stud1.name,stud1.sec,stud1.roll_numb,stud1.dept,stud1.fee,stud1.result);
+}
+if(stud2.result>=stud1.result)
+{
+printf("student 2 got the hightest marks \n the details of the student is as follows: \nname:%s\nsection:%s\nrollnumber:%s\ndepartment:%s\nfees:%d\nresult:%d",stud2.name,stud2.sec,stud2.roll_numb,stud2.dept,stud2.fee,stud2.result);
+}
+getch();
+}
+
+
+
+#include <stdio.h>
+#include<conio.h>
+void main()
+{
+struct book
+{
+char author[20];
+char title[20];
+float price;
+int no_pages;
+char publication[20];
+}book1,book2,book3;
+clrscr();
+printf("Enter the book-1 details: Author,title,price,number of pages,name of publication\n");
+scanf("%s%s%f%d%s",book1.author,book1.title,&book1.price,&book1.no_pages,book1.publication);
+printf("Enter the book-2 details: Author,title,price,number of pages,name of publication\n");
+scanf("%s%s%f%d%s",book2.author,book2.title,&book2.price,&book2.no_pages,book2.publication);
+printf("Enter the book-3 details: Author,title,price,number of pages,name of publication\n");
+scanf("%s%s%f%d%s",book3.author,book3.title,&book3.price,&book3.no_pages,book3.publication);
+if(book1.price>=book2.price && book1.price>=book3.price)
+{
+printf("Book-1 has the highest price:Its details are:\nAuthor=%s\nTitle=%s\nprice=%f\nNumber of pages=%d\nName of publication=%s\n",book1.author,book1.title,book1.price,book1.no_pages,book1.publication);
+}
+else if (book2.price>=book1.price && book2.price>=book3.price)
+{
+printf("Book-2 has the highest price:Its details are:\nAuthor=%s\nTitle=%s\nprice=%f\nNumber of pages=%d\nName ofpublication=%s\n",book2.author,book2.title,book2.price,book2.no_pages,book2.publication);
+}
+else
+{
+printf("Book-3 has the highest price:Its details are:\nAuthor=%s\nTitle=%s\nprice=%f\nNumber of pages=%d\nName ofpublication=%s\n",book3.author,book3.title,book3.price,book3.no_pages,book3.publication);
+}
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int num1,num2,add,sub,mul,rem;
+int *pnum1,*pnum2,*padd,*psub,*pmul,*prem;
+float div,*pdiv;
+clrscr();
+pnum1=&num1;
+pnum2=&num2;
+padd=&add;
+psub=&sub;
+pmul=&mul;
+prem=&rem;
+pdiv=&div;
+printf("\nEnter the two numbers");
+scanf("%d%d",pnum1,pnum2);
+*padd=*pnum1+*pnum2;
+*psub=*pnum1-*pnum2;
+*pmul=(*pnum1)*(*pnum2);
+*prem=*pnum1%num2;
+*pdiv=(float)*pnum1/num2;
+printf("\nThe addition is %d",*padd);
+printf("\nThe subtraction is %d",*psub);
+printf("\nThe multiplication is %d",*pmul);
+printf("\nThe remainder is %d",*prem);
+printf("\nThe quotient is %f",*pdiv);
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void swap(int *a,int *b)
+{
+int temp;
+temp=*a;
+*a=*b;
+*b=temp;
+}
+void main()
+{
+int num1,num2;
+clrscr();
+printf("Enter value of first number  ");
+scanf("%d",&num1);
+printf("Enter value of second number  ");
+scanf("%d",&num2);
+printf("Before Swapping: first number %d, second number %d\n",num1,num2);
+swap(&num1,&num2);
+printf("After Swapping: first number %d, second number %d\n",num1,num2);
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+FILE *fp;
+char c;
+char str[40];
+printf("Data Input....\n");
+fp=fopen("BMSCE.txt","w");
+while((c=getchar())!=EOF)
+putc(c,fp);
+fclose(fp);
+printf("Data output.....\n");
+fp=fopen("BMSCE.txt","r");
+if(fp==NULL)
+{
+printf("error\n");
+exit(1);
+}
+fgets(str,40,fp);
+puts(str);
+fclose(fp);
+return 0;
+}
